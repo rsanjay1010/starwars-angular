@@ -7,7 +7,7 @@
 
 .card-content {
   padding: 0px;
-  overflow: hidden;
+  overflow: auto;
   height:auto;
   transition: max-height .25s ease-in-out;
   &.collapse {
@@ -15,7 +15,7 @@
   }
 
   &.expand {
-    max-height: 100%;
+    max-height: 700px;
   }
   .list {
     border-radius: 0px;

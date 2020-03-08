@@ -16,8 +16,8 @@
     <div class="card-content collapse" [ngClass]="{ expand: expand && !isLoading }">
         <div class="content">
             <div class="list" *ngIf="!!character.films && character.films.length > 0">
-                <film [data]="film" class="list-item" *ngFor="let film of character?.films">
-                </film>
+                <app-film [data]="film" class="list-item" *ngFor="let film of character?.films">
+                </app-film>
             </div>
             <div *ngIf="!!character.films && character.films.length === 0" class="list-error">
                 Sorry, No Information Available
