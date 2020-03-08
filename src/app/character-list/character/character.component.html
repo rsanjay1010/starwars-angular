@@ -1,0 +1,27 @@
+<div class="card ">
+    <header class="card-header">
+        <p class="card-header-title">
+            {{ character.name }}
+        </p>
+        <button class="button is-white is-text" (click)="toggleContent()" [ngClass]="{ 'is-loading': isLoading }">
+            <span>Films </span>
+            <span class="icon is-small" *ngIf="expand">
+                <i class="fas fa-caret-up"></i>
+            </span>
+            <span class="icon is-small" *ngIf="!expand">
+                <i class="fas fa-caret-down"></i>
+            </span>
+        </button>
+    </header>
+    <div class="card-content collapse" [ngClass]="{ expand: expand && !isLoading }">
+        <div class="content">
+            <div class="list" *ngIf="!!character.films && character.films.length > 0">
+                <film [data]="film" class="list-item" *ngFor="let film of character?.films">
+                </film>
+            </div>
+            <div *ngIf="!!character.films && character.films.length === 0" class="list-error">
+                Sorry, No Information Available
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<article class="media">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{ data?.title }}</strong>
+        <br />
+        <small>{{ data?.release_date | date: "fullDate" }}</small>
+        <br />
+        <span class="desc">{{ data?.opening_crawl }}</span>
+      </p>
+    </div>
+  </div>
+</article>
