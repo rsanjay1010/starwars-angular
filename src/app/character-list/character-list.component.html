@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container loader-wrapper">
   <h1 class="title">
     Characters
+    <button class="button is-white is-text" [ngClass]="{ 'is-loading': isLoading }" *ngIf="isLoading"></button>
   </h1>
-  <div *ngFor="let character of characters" class="character-container">
-    <app-character [character]="character"></app-character>
-  </div>
-  <div></div>
+  <ng-container *ngIf='!isLoading'>
+    <app-character [character]="character" class="character-container" *ngFor="let character of characters">
+    </app-character>
+    <span *ngIf='characters.length === 0' class="error-text">Sorry, No Information Available</span>
+  </ng-container>
 </div>

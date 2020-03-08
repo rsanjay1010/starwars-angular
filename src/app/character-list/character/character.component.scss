@@ -1,5 +1,9 @@
 @import "bulma";
 
+.card {
+  margin-bottom: 2rem;
+}
+
 .card-header {
   align-items: center;
   border-bottom: $list-item-border;
@@ -8,8 +12,8 @@
 .card-content {
   padding: 0px;
   overflow: auto;
-  height:auto;
-  transition: max-height .25s ease-in-out;
+  height: auto;
+  transition: max-height 0.25s ease-in-out;
   &.collapse {
     max-height: 0px;
   }
@@ -23,7 +27,6 @@
 
   .list-error {
     min-height: 41px;
-    color: $red;
     padding: 0.5em 1em;
   }
 }

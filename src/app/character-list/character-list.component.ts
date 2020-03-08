@@ -1,15 +1,14 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from "@angular/core";
 
-import { CharacterAPIService } from '../services/character.service';
-import { Character } from '../model';
+import { CharacterAPIService } from "../services/character.service";
+import { Character } from "../model";
 
 @Component({
-  selector: 'app-character-list',
-  styleUrls: ['character-list.component.css'],
-  templateUrl: 'character-list.component.html'
+  selector: "app-character-list",
+  templateUrl: "character-list.component.html"
 })
 export class CharacterListComponent implements OnInit {
-
+  isLoading = false;
   characters: Character[] = [];
   constructor(private characterService: CharacterAPIService) {}
   ngOnInit() {
@@ -17,10 +16,17 @@ export class CharacterListComponent implements OnInit {
   }
 
   private loadAllCharacters() {
-    this.characterService.getAll().subscribe((data: any) => {
-      if (data && data.characters) {
-        this.characters = data.characters;
+    this.isLoading = true;
+    this.characterService.getAll().subscribe(
+      data => {
+        if (data && data.characters) {
+          this.characters = data.characters;
+        }
+        this.isLoading = false;
+      },
+      err => {
+        this.isLoading = false;
       }
-    });
+    );
   }
 }

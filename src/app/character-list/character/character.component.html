@@ -14,12 +14,12 @@
         </button>
     </header>
     <div class="card-content collapse" [ngClass]="{ expand: expand && !isLoading }">
-        <div class="content">
-            <div class="list" *ngIf="!!character.films && character.films.length > 0">
+        <div class="content list">
+            <ng-container *ngIf="!!character.films && character.films.length > 0">
                 <app-film [data]="film" class="list-item" *ngFor="let film of character?.films">
                 </app-film>
-            </div>
-            <div *ngIf="!!character.films && character.films.length === 0" class="list-error">
+            </ng-container>
+            <div *ngIf="!!character.films && character.films.length === 0" class="list-error error-text">
                 Sorry, No Information Available
             </div>
         </div>

@@ -1,11 +1,11 @@
-﻿import { Component, OnInit, Input } from '@angular/core';
-import { CharacterAPIService } from '../../services/character.service';
-import { Character } from '../../model';
+﻿import { Component, OnInit, Input } from "@angular/core";
+import { CharacterAPIService } from "../../services/character.service";
+import { Character } from "../../model";
 
 @Component({
-  selector: 'app-character',
-  styleUrls: ['character.component.scss'],
-  templateUrl: 'character.component.html'
+  selector: "app-character",
+  styleUrls: ["character.component.scss"],
+  templateUrl: "character.component.html"
 })
 export class CharacterComponent implements OnInit {
   @Input() character: Character;
@@ -14,8 +14,7 @@ export class CharacterComponent implements OnInit {
 
   constructor(private characterService: CharacterAPIService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleContent() {
     this.expand = !this.expand;
@@ -33,9 +32,6 @@ export class CharacterComponent implements OnInit {
       },
       err => {
         this.character.films = [];
-        this.isLoading = false;
-      },
-      () => {
         this.isLoading = false;
       }
     );
