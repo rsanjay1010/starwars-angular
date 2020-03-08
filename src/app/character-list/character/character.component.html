@@ -1,16 +1,8 @@
 <div class="card ">
     <header class="card-header">
-        <p class="card-header-title">
+        <button class="button is-white is-text card-header-title" (click)="toggleContent()"
+            [ngClass]="{ 'is-loading': isLoading }">
             {{ character.name }}
-        </p>
-        <button class="button is-white is-text" (click)="toggleContent()" [ngClass]="{ 'is-loading': isLoading }">
-            <span>Films </span>
-            <span class="icon is-small" *ngIf="expand">
-                <i class="fas fa-caret-up"></i>
-            </span>
-            <span class="icon is-small" *ngIf="!expand">
-                <i class="fas fa-caret-down"></i>
-            </span>
         </button>
     </header>
     <div class="card-content collapse" [ngClass]="{ expand: expand && !isLoading }">

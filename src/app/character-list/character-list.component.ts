@@ -9,6 +9,7 @@ import { Character } from "../model";
 })
 export class CharacterListComponent implements OnInit {
   isLoading = false;
+
   characters: Character[] = [];
   constructor(private characterService: CharacterAPIService) {}
   ngOnInit() {
