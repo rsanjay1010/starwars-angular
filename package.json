@@ -36,7 +36,10 @@
     "serialize-javascript": ">=2.1.1",
     "tslib": "^1.9.0",
     "typescript": "~3.4.3",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "minimist": ">=1.2.3",
+    "acorn": ">=6.4.1",
+    "websocket-extensions": ">=0.1.4"
   },
   "devDependencies": {
     "@angular/language-service": "~8.0.0",
